@@ -1,0 +1,48 @@
+#envelope {
+    position: relative;
+    height: 300px; /* افزایش ارتفاع برای فضای بیشتر */
+    width: 280px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    background-color: #FF6863;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.letter {
+    position: relative;
+    background-color: white;
+    width: 90%;
+    height: 100%; /* تغییر ارتفاع به 100% برای فضای بیشتر */
+    top: 5%;
+    border-radius: 10px;
+    box-shadow: 0 2px 26px rgba(0, 0, 0, .12);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.open .flap {
+    transform: rotatex(180deg);
+    transition: transform 0.5s ease, z-index 0.8s; /* انیمیشن flap به صورت ملایم‌تر و بیشتر */
+    z-index: 1;
+}
+
+.close .flap {
+    transform: rotatex(0deg);
+    transition: transform 0.5s 0.8s ease, z-index 1s;
+    z-index: 5;
+}
+
+.open .letter {
+    transform: translatey(-150px); /* افزایش مقدار انتقال برای باز شدن بیشتر */
+    transition: transform 0.5s 0.8s ease, z-index 0.8s;
+    z-index: 2;
+}
+
+.close .letter {
+    transform: translatey(0deg);
+    transition: transform 0.5s ease, z-index 1s;
+    z-index: 1;
+}
